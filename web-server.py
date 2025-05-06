@@ -5,10 +5,13 @@ DB_PATH="Actino_Draft.duckdb"
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-    x = 'Hello'
-    y = 'World'
-    return f'<h1>Hello, World!</h1><table><tr><td>{x}</td><td>{y}</td></tr></table>'
+def default_route():
+    links = ''
+    links += f'<p><a href="clusters">Clusters</a></p>'
+    links += f'<p><a href="phages">Phages</a></p>'
+    links += f'<p><a href="phamilies">Phamilies</a></p>'
+    links += f'<p><a href="genes">Genes</a></p>'
+    return links
 
 @app.route('/phages')
 def phages():
